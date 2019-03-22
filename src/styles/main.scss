@@ -2,67 +2,149 @@
 @import "partials/reset.scss"; 
 @import "partials/mixins.scss";
 
-html, body{
-    height: 100%;
+/* page */
+body,html{
+    margin-top:50px;
+    height: calc(100% - 50px);
+    background-color: #E7E7E7;
 }
 
-#app{
-    border:1px solid #333;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    .drum-machine{
-        border:1px solid #6a1b9a;
-        margin:20px;
-        padding:20px;
-    }
-    .element{
-        display: inline-block;
-        border:1px solid #6a1b9a;
-        margin:20px;
-        padding:20px;
-    }
+h1{
+    font-size: 25px;
+    margin: 0px 0px 0px 10px;
+}
+
+h2{
+    font-size: 20px;
+    margin: 10px 0px 0px 0px;
+}
+
+/* grid container */
+.grid-container{   
+    display: grid;
+    align-items: center; /* vertical alignment */
+    justify-items: center; /* horizontal alignment */
+}
+
+/* first grid item */
+#content{
+    /* font-family: 'Sniglet', cursive; */
+    font-family: 'Raleway', sans-serif;
+    color:#6a1b9a;
+    width:600px;
+    /* border:5px solid violet; */
+    background-color: #E7E7E7;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+}
+
+header{
+    /* border:5px solid purple; */
+}
+
+#drum-machine{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border:2px solid #6a1b9a;
+    border-radius: 10px;
+    background-color: #333;
+    /* padding: 5px; */
+}
+
+#drum-pads{
+    /* border:5px solid purple; */
+    /* font-family: 'Raleway', sans-serif; */
+    font-size: 28px;
+    height: 320px;
+    width: 320px;
+    padding: 10px 0px 10px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap:10px;
+    /* justify-self:center; */
+}
+
+#drum-pads div {
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px;
+    /* background:#333; */
+    background: rgba(255, 255, 0, 0.596);
+    /* color:rgba(255, 255, 0, 0.835); */
+    /* color:yellow; */
+    color:white;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25), inset 0 -1px 0 hsla(0,0%,100%,.05), 0 1px 0 hsla(0,0%,0%,.15), 0 0 1px hsla(0,0%,0%,.1);     
+}
+
+#drum-pads div:active{
+    /* background:rgba(255, 255, 0, 0.596); */
+    background:rgba(255, 255, 0, 0.712);
+    color: #1e1e1e;
+    font-size: 35px;
+}
+
+#drum-pads div:hover{
+    cursor: pointer;
+}
+
+#drum-pads div::selection {
+    background: transparent;
+}
+
+#controller{
+    /* border:5px solid yellowgreen; */
+    padding-top: 10px;
+}
+
+#display{
+    color:rgba(255, 255, 0, 0.856);
+    text-align: center;
+    font-size: 22px;
+}
+
+#display h2::selection{
+    background: transparent;
 }
 
 footer{
+    /* border:5px solid purple; */
+    text-align: center;
+}
 
-    /* DROZERAH */
-    #drozerah{
 
-        text-align: center;
-        margin-top: 100px;
+/* DROZERAH */
 
-        .drozerah {
-            text-decoration: none;
-            font-size: 22px;
-            line-height: 24px;
-            height: 24px;
-            color:#333;
-        }
+.drozerah {
+    text-decoration: none;
+    font-size: 22px;
+    line-height: 24px;
+    height: 24px;
+    color:#333;
+}
 
-        .drozerah svg {
-            width:20px;
-            height:20px;
-            display: inline-block;
-            vertical-align: -2px;
-        }
+.drozerah svg {
+    width:20px;
+    height:20px;
+    display: inline-block;
+    vertical-align: -2px;
+}
 
-        .drozerah path {
-            fill: #6a1b9a;
-            fill-rule: evenodd;
-        }
+.drozerah path {
+    fill: #6a1b9a;
+    fill-rule: evenodd;
+}
 
-        .drozerah span {
-            display: inline-block;
-            color: #6a1b9a;
-        }
+.drozerah span {
+    display: inline-block;
+    color: #6a1b9a;
+}
 
-        .drozerah:hover path {
-            fill:purple;
-        }
+.drozerah:hover path {
+    fill:purple;
+}
 
-        .drozerah:hover span {
-            color: purple;
-        }
-    }
+.drozerah:hover span {
+    color: purple;
 }
