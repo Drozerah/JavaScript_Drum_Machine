@@ -168,6 +168,20 @@ import './styles/main.scss'
         }
     }
 
+    // toogleClass
+    // add or remove class to element closest parent 
+    const toogleClass = (child, className) => {
+        let parent = child.closest("div")
+
+        if (!parent.classList.contains(className)) {
+            parent.classList.add(className)
+            // console.log('isActive ?',parent) // __DEBUG
+        } else {
+            parent.classList.remove(className)
+            // console.log('isActive ?',parent) // __DEBUG
+        }      
+    }
+
     /*
     *   KEYBOARD ACTIONS
     */
@@ -178,8 +192,8 @@ import './styles/main.scss'
         if(dataKeysWich.includes(event.which)){
             // get HTML audio tag
             let audio = document.getElementById(event.key.toUpperCase())
-            // add class active
-            addRemoveClassToParrent(audio, "add", "isActive")
+            // toogle isActive class on parent element
+            toogleClass(audio, "isActive")
             // play audio
             audioPlay(audio)
         }
@@ -191,8 +205,8 @@ import './styles/main.scss'
         if(dataKeysWich.includes(event.which)){
             // get HTML audio tag
             let audio = document.getElementById(event.key.toUpperCase())
-            // remove class active
-            addRemoveClassToParrent(audio, "remove", "isActive")
+            // toogle isActive class on parent element
+            toogleClass(audio, "isActive")
         }
     })
 
