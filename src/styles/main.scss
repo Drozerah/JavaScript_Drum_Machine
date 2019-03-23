@@ -82,6 +82,17 @@ header{
     }
 }
 
+// current pad style when a key is pressed
+.isActive{
+
+    background: $yellow-lighten-1 !important;
+    
+    div {
+        color: $primary-color !important;
+        font-size: 35px !important;
+    }
+}
+
 #controller{
 
     padding-top: 10px;
