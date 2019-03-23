@@ -152,6 +152,7 @@ import './styles/main.scss'
         audio.play()
     }
 
+    // *** TODO -> remove the function below
     // add or remove class to element closest parent
     const addRemoveClassToParrent = (child, choice, className)=> {
         let parent = child.closest("div")
